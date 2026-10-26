@@ -1,46 +1,109 @@
-# Getting Started with Create React App
+# 🏛️ Civic Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![Civic Portal](https://img.shields.io/badge/Civic-Portal-2563eb?style=for-the-badge&logo=googlemaps&logoColor=white)
+[![React](https://img.shields.io/badge/React-TypeScript-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-In the project directory, you can run:
+**A dual-interface civic issue reporting and management platform connecting citizens with municipal authorities.**
 
-### `npm start`
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 📖 Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Civic Portal is a web application that bridges the gap between citizens and municipal governments. It provides two distinct interfaces: a **Citizen Portal** for submitting and tracking civic complaints, and a **Municipal Dashboard** for authorities to manage, prioritize, and resolve reported issues.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✨ Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Citizen Portal
+- 📝 **Issue Reporting** — Submit civic complaints with category, description, and location
+- 📍 **Location Tagging** — Attach location data to issues for precise mapping
+- 📊 **Track Status** — Real-time status updates on submitted complaints
+- 🔔 **Notifications** — Get notified when your issue status changes
+- 📸 **Photo Upload** — Attach photographic evidence to reports
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Municipal Dashboard
+- 🗂️ **Issue Management** — View, prioritize, and assign issues to departments
+- 📈 **Analytics** — Overview of open/closed issues, resolution times, and categories
+- 🏷️ **Category Management** — Organize issues by type (roads, sanitation, water, electricity, etc.)
+- ✅ **Status Workflow** — Move issues through Reported → In Progress → Resolved pipeline
+- 👥 **Department Routing** — Assign issues to the correct municipal department
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🛠️ Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Technology | Purpose |
+|-----------|---------|
+| React 18 + TypeScript | UI framework |
+| Create React App | Build tooling |
+| React Router | Client-side navigation |
+| Tailwind CSS | Styling |
+| Supabase | Backend-as-a-Service (Auth + Database + Storage) |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Node.js 16+
+- A [Supabase](https://supabase.com) project (free tier works)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
+
+```bash
+git clone https://github.com/williamcsec/civic-portal.git
+cd civic-portal
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root:
+
+```env
+REACT_APP_SUPABASE_URL=https://your-project.supabase.co
+REACT_APP_SUPABASE_ANON_KEY=your_anon_key_here
+```
+
+### Running Locally
+
+```bash
+npm start
+```
+
+App runs at `http://localhost:3000`
+
+---
+
+## 📁 Project Structure
+
+```
+civic-portal/
+├── public/
+└── src/
+    ├── App.tsx                   # Root component + routing
+    ├── components/
+    │   ├── CitizenPortal.tsx     # Citizen-facing issue submission UI
+    │   ├── MunicipalDashboard.tsx# Admin dashboard for issue management
+    │   ├── citizen/              # Citizen-specific components
+    │   ├── municipal/            # Municipal authority components
+    │   └── ui/                   # Shared UI primitives
+    ├── lib/                      # Supabase client, utilities
+    ├── styles/                   # Global CSS and theme
+    └── utils/                    # Helper functions
+```
+
+---
+
+## 📄 License
+
+MIT © williamcsec
